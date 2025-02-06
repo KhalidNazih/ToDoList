@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/taskTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="New Task"
@@ -54,8 +55,19 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginHorizontal="20dp"
+        android:id="@+id/timePickerButton"
+        android:text="Select Time"
+        app:cornerRadius="5dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginHorizontal="20dp"
         android:id="@+id/saveButton"
         android:text="Save"
+        android:backgroundTint="@color/orange"
+        android:textColor="?attr/colorOnPrimary"
         app:cornerRadius="5dp"/>
 
 </LinearLayout>
