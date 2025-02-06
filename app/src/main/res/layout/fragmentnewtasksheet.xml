@@ -57,7 +57,8 @@
         android:layout_marginHorizontal="20dp"
         android:id="@+id/timePickerButton"
         android:text="Select Time"
-        app:cornerRadius="5dp"/>
+        app:cornerRadius="5dp"
+        android:textColor="@color/orange"/>
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"

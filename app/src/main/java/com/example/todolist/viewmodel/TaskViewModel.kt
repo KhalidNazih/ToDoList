@@ -1,7 +1,5 @@
 package com.example.todolist.viewmodel
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.todolist.model.TaskItem
@@ -15,7 +13,7 @@ class TaskViewModel: ViewModel() {
 
     init {
         taskItems.value = mutableListOf()
-    }
+}
 
     fun addTaskItem(newTask: TaskItem) {
         val list = taskItems.value
@@ -32,12 +30,33 @@ class TaskViewModel: ViewModel() {
         taskItems.postValue(list)
     }
 
-    fun setCompleted(taskItem: TaskItem) {
-        val list = taskItems.value
-        val task = list!!.find { it.id == taskItem.id }!!
-        if (task.completedDate == null)
-            task.completedDate = LocalDate.now()
-        taskItems.postValue(list)
+//    fun setCompleted(taskItem: TaskItem) {
+//        val list = taskItems.value
+//        val task = list!!.find { it.id == taskItem.id }!!
+//        if (task.completedDate == null)
+//            task.completedDate = LocalDate.now()
+//        taskItems.postValue(list)
+//    }
+
+    fun toggleTaskCompletion(taskItem: TaskItem) {
+        val list = taskItems.value ?: return
+        val task = list.find { it.id == taskItem.id } ?: return
+
+        // Toggle completion status
+        task.completedDate = if (task.isCompleted()) null else LocalDate.now()
+
+        taskItems.postValue(list) // Update UI
+    }
+
+    fun deleteTask(taskItem: TaskItem) {
+        taskItems.value?.remove(taskItem)
+        taskItems.postValue(taskItems.value)
+    }
+
+    fun undoDelete(taskItem: TaskItem) {
+        taskItems.value?.add(taskItem)
+        taskItems.postValue(taskItems.value)
+
     }
 
 }

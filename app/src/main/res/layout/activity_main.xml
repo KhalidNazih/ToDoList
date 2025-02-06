@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:backgroundTint="?attr/colorPrimary"
+        android:backgroundTint="@color/orange"
         android:padding="5dp"
         android:text="New Task"
         android:textColor="?attr/colorOnPrimary"
