@@ -19,8 +19,7 @@ class TaskItemViewHolder(
     private val context: Context,
     private val binding: TaskItemCellBinding,
     private val clickListener: TaskItemClickListener
-): RecyclerView.ViewHolder(binding.root)
-{
+) : RecyclerView.ViewHolder(binding.root) {
     private val timeFormat = DateTimeFormatter.ofPattern("HH:mm")
 
 
@@ -40,8 +39,8 @@ class TaskItemViewHolder(
 
         binding.name.text = taskItem.name
         binding.desc.text = taskItem.desc
-        if (taskItem.dueTime != null) {
-            binding.dueTime.text = timeFormat.format(taskItem.dueTime)
+        if (taskItem.dueTime() != null) {
+            binding.dueTime.text = timeFormat.format(taskItem.dueTime())
         } else {
             binding.dueTime.text = ""
         }

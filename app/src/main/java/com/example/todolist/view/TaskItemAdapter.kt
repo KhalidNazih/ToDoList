@@ -9,8 +9,7 @@ import com.example.todolist.model.TaskItem
 class TaskItemAdapter(
     private var taskItems: List<TaskItem>,
     private val clickListener: TaskItemClickListener
-): RecyclerView.Adapter<TaskItemViewHolder>()
-{
+) : RecyclerView.Adapter<TaskItemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskItemViewHolder {
         val from = LayoutInflater.from((parent.context))
         val binding = TaskItemCellBinding.inflate(from, parent, false)

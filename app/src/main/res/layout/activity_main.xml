@@ -8,12 +8,11 @@
     tools:context=".view.MainActivity">
 
 
-
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/todoListRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/todoListRecyclerView"
-        android:backgroundTint="@color/design_default_color_background"/>
+        android:backgroundTint="@color/design_default_color_background" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/newTaskButton"
@@ -24,9 +23,9 @@
         android:padding="5dp"
         android:text="New Task"
         android:textColor="?attr/colorOnPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:icon="@drawable/baseline_add_circle_outline_24"
-        app:iconTint="?attr/colorOnPrimary"/>
+        app:iconTint="?attr/colorOnPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

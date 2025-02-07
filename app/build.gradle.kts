@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.ksp)
 }
 
 android {
@@ -49,4 +50,16 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // room (ensure correct dependencies)
+    ksp(libs.ksp.room.compiler)
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+
+    // lifecycle components
+    implementation(libs.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.activity.ktx)
+    implementation(libs.fragment.ktx)
+
 }
