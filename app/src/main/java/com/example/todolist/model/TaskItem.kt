@@ -29,7 +29,7 @@ class TaskItem(
     fun isCompleted() = completedDate() != null
     fun imageResource(): Int = if (isCompleted()) R.drawable.checked_24 else R.drawable.unchecked_24
 
-    private fun doneColor(context: Context) = ContextCompat.getColor(context, R.color.orange)
+    private fun doneColor(context: Context) = ContextCompat.getColor(context, R.color.blue)
     private fun notDoneColor(context: Context) = ContextCompat.getColor(context, R.color.black)
     fun imageColor(context: Context): Int =
         if (isCompleted()) doneColor(context) else notDoneColor(context)

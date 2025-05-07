@@ -56,7 +56,7 @@ class TaskItemViewHolder(
 //            binding.name.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
 //            binding.desc.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
 //            binding.dueTime.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
-            val strikeColor = ContextCompat.getColor(binding.root.context, R.color.orange)
+            val strikeColor = ContextCompat.getColor(binding.root.context, R.color.blue)
             applyColoredStrikeThrough(binding.name, taskItem.name, strikeColor)
             applyColoredStrikeThrough(binding.desc, taskItem.desc, strikeColor)
             binding.dueTime.setTextColor(ContextCompat.getColor(context, R.color.fade))
